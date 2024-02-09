@@ -1,0 +1,24 @@
+script: visualize_passenger_data.R
+
+artefacts:
+  - staticgraph:
+      description: Plots of passengers and % changes over time
+      filenames:
+        - sk_departures_dual.png
+        - bra_departures_dual.png
+        - chi_departures_dual.png
+        - sk_dests2.png
+        - bra_dests2.png
+        - chi_dests2.png
+
+packages:
+- tidyverse
+- janitor
+- ggplot2
+- scales
+
+depends:
+  get_flight_data:
+    id: latest
+    use:
+      iata_data.rds: iata_data.rds

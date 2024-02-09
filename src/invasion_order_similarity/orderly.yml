@@ -1,0 +1,32 @@
+script: invasion_order_similarity.R
+
+parameters:
+  - init_inf
+
+artefacts:
+  - staticgraph:
+      description: Invasion order similarities
+      filenames:
+        - order_success_plot.png
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - stringr
+  - ggplot2
+  - ggthemes
+  - ggpubr
+  - RColorBrewer
+
+depends:
+  - collate_invasion_order:
+      id: latest(parameter:init_inf == init_inf)
+      use:
+        invasion_order.rds: invasion_order.rds
+        
+sources:
+  - R/utils.R
+

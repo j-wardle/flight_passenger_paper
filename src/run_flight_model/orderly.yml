@@ -1,0 +1,46 @@
+script: run_flight_model.R
+
+parameters:
+  - combine_months
+  - beta
+  - delta
+  - gamma
+  - init_inf
+  - start_month
+  - start_year
+  - population_year
+  - seed_country
+  - pathogen
+  - flight_scenario
+
+artefacts:
+  - data:
+      description: Model output
+      filenames:
+        - scenario_output.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - ggplot2
+  - ggthemes
+  - patchwork
+  - stringr
+  - multipatchr
+  - mover
+  - lubridate
+
+depends:
+  estimate_flight_probs:
+    id: latest
+    use:
+      pops_for_sim.rds: pops_for_sim.rds
+      probs_for_sim.rds: probs_for_sim.rds
+
+sources:
+  - R/utils.R
+  - R/common_plot_properties.R
+  - R/utilities.R

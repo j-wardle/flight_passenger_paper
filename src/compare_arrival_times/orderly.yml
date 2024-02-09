@@ -1,0 +1,42 @@
+script: compare_arrival_times.R
+
+parameters:
+  - init_inf
+#   - normal_year
+#   - disrupted_year
+#   - start_month
+#   - population_year
+#   - seed_country
+
+artefacts:
+  - data:
+      description: Dataframe of arrival time comparison
+      filenames:
+        - arrival_differences.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - stringr
+  - ggplot2
+  - ggthemes
+  - ggbeeswarm
+  - ggpubr
+  - RColorBrewer
+
+depends:
+  # - collate_arrival_times:
+  #     id: latest(parameter:start_year == normal_year && parameter:start_month == start_month && parameter:population_year == population_year && parameter:seed_country == seed_country)
+  #     use:
+  #       normal_arrival_times.rds: arrival_times.rds
+  # - collate_arrival_times:
+  #     id: latest(parameter:start_year == disrupted_year && parameter:start_month == start_month && parameter:population_year == population_year && parameter:seed_country == seed_country)
+  #     use:
+  #       disrupted_arrival_times.rds: arrival_times.rds
+  - collate_arrival_times:
+      id: latest(parameter:init_inf == init_inf)
+      use:
+        arrival_times.rds: arrival_times.rds

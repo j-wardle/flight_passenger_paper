@@ -1,0 +1,298 @@
+script: collate_invasion_order.R
+parameters: init_inf
+artefacts:
+  data:
+    description: Dataframe of invasion order
+    filenames: invasion_order.rds
+packages:
+- readr
+- purrr
+depends:
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "mers" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order1.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "sarscov2"
+      && parameter:flight_scenario == "mers")
+    use:
+      invasion_order2.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "zika" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order3.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "mers" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order4.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "sarscov2"
+      && parameter:flight_scenario == "mers")
+    use:
+      invasion_order5.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2014 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "zika" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order6.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "mers" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order7.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "sarscov2"
+      && parameter:flight_scenario == "mers")
+    use:
+      invasion_order8.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "may" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "zika" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order9.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "mers" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order10.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "sarscov2"
+      && parameter:flight_scenario == "mers")
+    use:
+      invasion_order11.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "jun" && parameter:start_year == 2015 && parameter:population_year == 2015
+      && parameter:seed_country == "South Korea" && parameter:pathogen == "zika" &&
+      parameter:flight_scenario == "mers")
+    use:
+      invasion_order12.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order13.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "sarscov2")
+    use:
+      invasion_order14.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order15.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order16.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "sarscov2")
+    use:
+      invasion_order17.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2019 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order18.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order19.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "sarscov2")
+    use:
+      invasion_order20.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "jan" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order21.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order22.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "sarscov2")
+    use:
+      invasion_order23.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2020 && parameter:population_year == 2020
+      && parameter:seed_country == "China" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "sarscov2")
+    use:
+      invasion_order24.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order25.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "zika")
+    use:
+      invasion_order26.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order27.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order28.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "zika")
+    use:
+      invasion_order29.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2015 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order30.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order31.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "zika")
+    use:
+      invasion_order32.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "feb" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order33.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.4 && parameter:delta
+      == 0.167 && parameter:gamma == 0.333 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "mers" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order34.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.75 && parameter:delta
+      == 0.25 && parameter:gamma == 0.25 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "sarscov2" &&
+      parameter:flight_scenario == "zika")
+    use:
+      invasion_order35.rds: invasion_order_incl_recovered_using_median_order.rds
+- invasion_order:
+    id: latest(parameter:combine_months == FALSE && parameter:beta == 0.286 && parameter:delta
+      == 0.071 && parameter:gamma == 0.143 && parameter:init_inf == 100 && parameter:start_month
+      == "mar" && parameter:start_year == 2016 && parameter:population_year == 2016
+      && parameter:seed_country == "Brazil" && parameter:pathogen == "zika" && parameter:flight_scenario
+      == "zika")
+    use:
+      invasion_order36.rds: invasion_order_incl_recovered_using_median_order.rds

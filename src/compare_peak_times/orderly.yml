@@ -1,0 +1,29 @@
+script: compare_peak_times.R
+
+parameters:
+  - init_inf
+
+artefacts:
+  - data:
+      description: Dataframe of peak time comparison
+      filenames:
+        - peak_time_differences.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - stringr
+  - ggplot2
+  - ggthemes
+  - ggbeeswarm
+  - ggpubr
+  - RColorBrewer
+
+depends:
+  - collate_peak_times:
+      id: latest(parameter:init_inf == init_inf)
+      use:
+        peak_times.rds: peak_times.rds

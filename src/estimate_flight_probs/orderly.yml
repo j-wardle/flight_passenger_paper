@@ -1,0 +1,30 @@
+script: flight_matrix.R
+
+parameters:
+  - analysis_years_start
+  - analysis_years_end
+
+artefacts:
+  - data:
+      description: Probability matrix
+      filenames:
+        - probs_for_sim.rds
+        - pops_for_sim.rds
+
+packages:
+  - dplyr
+  - stringr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - ggplot2
+
+depends:
+  get_flight_data:
+    id: latest
+    use:
+      iata_data.rds: iata_data.rds
+
+resources:
+   - Population-EstimatesData.csv

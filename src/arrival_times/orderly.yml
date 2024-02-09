@@ -1,0 +1,54 @@
+script: arrival_times.R
+
+parameters:
+  - combine_months
+  - beta
+  - delta
+  - gamma
+  - init_inf
+  - start_month
+  - start_year
+  - population_year
+  - seed_country
+  - pathogen
+  - flight_scenario
+
+artefacts:
+  - data:
+      description: Invasion times
+      filenames:
+        - invasion_time.rds
+        - invasion_time_incl_recovered.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - ggplot2
+  - ggthemes
+  - patchwork
+  - stringr
+
+depends:
+  # run_flight_model_2014obs:
+  #   id: latest(parameter:combine_months == combine_months && parameter:beta == beta && parameter:delta == delta && parameter:gamma == gamma && parameter:init_inf == init_inf)
+  #   use:
+  #     output2014_may.rds: scenario_output.rds
+  # run_flight_model_2015obs:
+  #   id: latest(parameter:combine_months == combine_months && parameter:beta == beta && parameter:delta == delta && parameter:gamma == gamma && parameter:init_inf == init_inf)
+  #   use:
+  #     output2015_may.rds: scenario_output.rds
+  # run_flight_model_2014obs_june:
+  #   id: latest(parameter:combine_months == combine_months && parameter:beta == beta && parameter:delta == delta && parameter:gamma == gamma && parameter:init_inf == init_inf)
+  #   use:
+  #     output2014_june.rds: scenario_output.rds
+  # run_flight_model_2015obs_june:
+  #   id: latest(parameter:combine_months == combine_months && parameter:beta == beta && parameter:delta == delta && parameter:gamma == gamma && parameter:init_inf == init_inf)
+  #   use:
+  #     output2015_june.rds: scenario_output.rds
+  run_flight_model:
+    id: latest(parameter:combine_months == combine_months && parameter:beta == beta && parameter:delta == delta && parameter:gamma == gamma && parameter:init_inf == init_inf && parameter:start_month == start_month && parameter:start_year == start_year && population_year == population_year && seed_country == seed_country && pathogen == pathogen && flight_scenario == flight_scenario)
+    use:
+      model_output.rds: scenario_output.rds

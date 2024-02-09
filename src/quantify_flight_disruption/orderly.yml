@@ -1,0 +1,25 @@
+script: quantify_flight_disruption.R
+
+artefacts:
+  - data:
+      description: Overall flight changes
+      filenames:
+        - global_flight_changes.rds
+        - seed_location_flight_changes.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - ggplot2
+  - ggthemes
+  - stringr
+  - lubridate
+
+depends:
+  get_flight_data:
+    id: latest
+    use:
+      iata_data.rds: iata_data.rds

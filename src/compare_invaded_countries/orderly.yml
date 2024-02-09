@@ -1,0 +1,34 @@
+script: compare_invaded_countries.R
+
+parameters:
+  - init_inf
+
+artefacts:
+  - staticgraph:
+      description: Invaded country comparison
+      filenames:
+        - results_fig_invaded_countries_month_set_later_allflightchanges.png
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - stringr
+  - ggplot2
+  - ggthemes
+  - ggbeeswarm
+  - ggpubr
+  - RColorBrewer
+
+depends:
+  - collate_invaded_countries:
+      id: latest(parameter:init_inf == init_inf)
+      use:
+        invaded_countries.rds: invaded_countries.rds
+  - quantify_flight_disruption:
+      id: latest
+      use:
+        global_flight_changes.rds: global_flight_changes.rds
+        seed_location_flight_changes.rds: seed_location_flight_changes.rds

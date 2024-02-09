@@ -1,0 +1,15 @@
+script: get_flight_data.R
+
+parameters:
+  - folder # folder where data is saved
+  - analysis_years_start
+  - analysis_years_end
+
+artefacts:
+  - data:
+      description: Flight data in usable format
+      filenames:
+        - iata_data.rds
+
+packages:
+  - janiata # this package can be installed using remotes::install_github("j-wardle/janiata")

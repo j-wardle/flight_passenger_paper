@@ -1,0 +1,34 @@
+script: compare_attack_rates.R
+
+parameters:
+  - init_inf
+#   - normal_year
+#   - disrupted_year
+#   - start_month
+#   - population_year
+#   - seed_country
+
+artefacts:
+  - data:
+      description: Dataframe of attack rate comparison
+      filenames:
+        - attack_rate_differences.rds
+
+packages:
+  - dplyr
+  - forcats
+  - tidyr
+  - readr
+  - purrr
+  - stringr
+  - ggplot2
+  - ggthemes
+  - ggbeeswarm
+  - ggpubr
+  - RColorBrewer
+
+depends:
+  - collate_attack_rates:
+      id: latest(parameter:init_inf == init_inf)
+      use:
+        attack_rates.rds: attack_rates.rds
